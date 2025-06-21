@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: rgb(68, 125, 199);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.3em;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg" class="msg">Clique em mim</div>
+    <script>
+
+        // Selecionando por Marca
+        var corpo = document.body
+        var p1 = document.getElementsByTagName('p')[0] // Selecionando o primeiro parágrafo na variável p1 por JS
+        window.document.write('Está escrito assim: ' + p1.innerText) // innerText = texto que está dentro do primeiro parágrafo
+        p1.style.color = 'blue' // Mudando a cor do primeiro parágrafo para azul por JS
+        corpo.style.background = 'gray' // Mudando a cor do fundo para cinza por JS
+        document.write(p1.innerHTML) // innerHTML = puxa toda a formatação do texto, inclusive o negrito
+
+        // Selecionando por ID
+        var d = document.getElementById('msg') // Puxando a div do HTML para o JS na variável d por ID
+        d.style.background = 'green' //
+        d.innerText = 'Estou aguardando..' // Mudando por JS o que está escrito na div
+        document.getElementById('msg').innerText = 'Estou aguardando...' // Outra forma da de cima
+
+        // Selecionando por Nome
+        var d = document.getElementsByName('msg')[0] // Colocamos o colchete pois é ElementS, no plural
+        d.innerText = 'Estou aguardando...'
+
+        // Selecionando por Classe
+        var d = document.getElementsByClassName('div.msg')
+        d.style.background = 'blue'
+
+        // Selecionando por Seletor
+        var d = document.querySelector('div#msg') // Mais prático quando você estiver fazendo alterações rápidas
+        d.style.background = 'blue'
+    </script>
+</body>
+</html>
