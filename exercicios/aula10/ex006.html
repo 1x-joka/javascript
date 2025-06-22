@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body {
+            background-color: lightgray;
+            height: 100vh; /* O align-items só "ativa" verticalmente se tiver uma altura definida */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #area {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.3em;
+            background-color: rgb(13, 65, 208);
+            color: white;
+            border: 2px solid black;
+            height: 200px;
+            width: 200px;
+            border-radius: 13px;
+
+            /* Centralizando a letra */
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area"> <!-- Quando eu clicar em cima da div, a função vai disparar-->
+        Interaja...
+    </div>
+    <script>
+        var a = document.getElementById('area')
+
+        // Ligando o HTML e o JS
+        a.addEventListener('click', clicar) // Vai "prestar atenção" em determinado evento
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        // Criando as funções
+        function clicar() { // Chamando a função clicar
+            a.innerText = 'Clicou' // Substituindo o texto que está na variável a
+            a.style.color = 'black'
+            a.style.background = 'yellow'
+        }
+
+        function entrar() {
+            a.innerText = 'Entrou'
+            a.style.background = 'red'
+        }
+
+        function sair() {
+            a.innerText = 'Saiu'
+            a.style.background = 'green'
+        }
+    </script>
+</body>
+</html>
