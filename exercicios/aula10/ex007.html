@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-size: 1.3em;
+            background-color: lightgray;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+
+            /* Centralizando a div container */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            padding: 10px;
+        }
+
+        input {
+            margin-bottom: 20px;
+            width: 100px;
+            margin-left: 10px;
+        }
+
+        #res {
+            margin-left: 10px;
+            width: 100vw;
+            text-align: center;
+        }
+
+        .container { 
+            border: 2px solid black;
+            width: 400px;
+            height: 200px;
+            padding: 10px;
+            margin: auto;
+            border-radius: 13px;
+            box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.292);
+            
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        input[type="button"]:hover{
+            border: 1px solid black;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+
+        .inputs {
+            width: 100%;
+
+            /* Centralizando */
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Somando Valores</h1>
+        <div class="inputs">
+            <input type="number" name="txtn1" id="txtn1">
+            <input type="number" name="txtn2" id="txtn2">
+            <input type="button" value="Somar" onclick="somar()">
+        </div>
+        <div id="res">Resultado</div>
+    </div>
+
+    <script>
+        function somar() {
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.querySelector('input#txtn2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value) // Convertendo o tn1(texto) para n1(número)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+    </script>
+</body>
+</html>
