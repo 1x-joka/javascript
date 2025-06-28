@@ -16,9 +16,14 @@
     <label for="txtvel">Velocidade do carro:</label>
     <input type="number" name="txtvel" id="txtvel"> Km/h <br>
     <input type="button" value="Verificar" onclick="calcular()">
-    <div id="res">
+    <div id="res"></div><br>
+    <hr>
 
-    </div>
+    <h1>Sistema de País</h1>
+    <label for="ipais">Nome do país que você mora:</label>
+    <input type="text" name="pais" id="ipais"> <br>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res2"></div>
 
     <script>
         function calcular() {
@@ -30,6 +35,19 @@
 
         if (vel > 60) {
             res.innerHTML += `<p>Você está <strong>multado</strong> por excesso de velocidade!` // Não pode não ter o + antes do igual pois irá substituir o valor anterior
+            }
+        }
+
+        function verificar() {
+            var pais2 = document.querySelector('input#ipais')
+            var res2 = document.querySelector('div#res2')
+            var transformacao = pais2.value
+            res2.innerHTML = `<p>O país atual que você mora é <strong>${transformacao}</strong></p><br>`
+
+        if (transformacao == 'Brasil') {
+             res2.innerHTML += 'Você é brasileiro!' /* Não faça: document.write('Você é estrangeiro') pois isso apaga todo o conteúdo da página para mostrar somente isso / Use += pois, se não, irá sobrescrever o res2.innerHTML de cima */
+        } else {
+            res2.innerHTML += 'Você é estrangeiro'
         }
         }
     </script>
