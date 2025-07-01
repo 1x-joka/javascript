@@ -11,8 +11,8 @@ function isNumero(n) {
     }
 }
 
-function inLista(n, l) {
-    if (l.indexOf(Number(n)) != -1) { // Verificando se o numero está na lista
+function inLista(n, vetor) { // l é somente um parâmetro, ele representa a lista de valores adicionados
+    if (vetor.indexOf(Number(n)) != -1) { // Verificando se o numero está na lista
         return(true)
     } else {
         return(false)
@@ -25,7 +25,7 @@ function adicionar() {
         let item = document.createElement('option') // Criando a tag option
         item.text = `Valor ${num.value} adicionado` // Mostrando visualmente que foi adicionado
         lista.appendChild(item) // Atribuindo o valor adicionado aos input's
-        res.innerHTML = '' // Quando eu adicionar um novo elemento, ele tem que ficar vazio
+        res.innerHTML = '' // Quando eu adicionar um novo elemento, ele limpa
     } else {
         alert('[ERRO} Valor inválido ou já encontrado na lista')
     }
