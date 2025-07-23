@@ -5,7 +5,8 @@ let amigo = {
     engordar(p=0){
         console.log('Engordou') // Caso eu aumente o peso
         this.peso += p // Cálculo para o aumento
-    }}
+    }
+}
 
 amigo.engordar(3) // Engordando 3kg
 
