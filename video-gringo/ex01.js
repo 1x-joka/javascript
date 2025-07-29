@@ -98,7 +98,7 @@ for (let x = 0; x < todos.length; x++) {
     console.log(todos[x].text)
 }
 
-for (let todo of todos) { // a cada volta, "todo" vai ser um dos objetos do array
+for (let todo of todos) { // a cada volta, "todo" vai ser um dos objetos do array "todos"
     console.log(todo.id)
 }
 
