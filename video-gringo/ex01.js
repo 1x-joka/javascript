@@ -88,3 +88,25 @@ console.log(todoJSON)
 
 const todosParsed = JSON.parse(todoJSON) // Converte a string JSON de volta em um objeto JavaScript
 console.log(todosParsed)
+
+// Estrutura For
+for (let i = 0; i <= 10; i++) { // Enquanto i <= 10, ele adiciona mais 1, começa em 0
+    console.log(`For loop number: ${i}`)
+}
+
+for (let x = 0; x < todos.length; x++) {
+    console.log(todos[x].text)
+}
+
+for (let todo of todos) { // a cada volta, "todo" vai ser um dos objetos do array
+    console.log(todo.id)
+}
+
+// Estrutura While
+let i = 0
+while (i < 10) {
+    console.log(`While loop number: ${i}`)
+    i++
+}
+
+// forEach, map, filter
