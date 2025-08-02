@@ -151,6 +151,30 @@ if (alpha2 > 5 || beta > 10) {
 
 // Operador Ternário
 const gama = 11
-
 const color = gama > 10 ? 'red' : 'blue' // Se gama for maior que 10, a variável "color" recebe 'red', se não, ela recebe 'blue'
-console.log(color)
+
+switch(color) { // switch vai comparar o valor de 'color' com os case
+    case 'red':
+        console.log('color is red')
+        break // Essencial para impedir que o switch continue executando os próximos blocos depois de encontrar o case certo
+    case 'blue':
+        console.log('color is blue')
+        break
+    default: // Só executa se nenhuma das condições acima batesse
+        console.log('color is NOT red or blue')
+        break
+}
+
+// Function's
+
+function addNums(num1 = 0, num2 = 0) {
+    return num1 + num2
+}
+
+console.log(addNums())
+
+const addNums2 = (num3 = 0, num4 = 0) => { // Arrow Function
+    return num3 + num4
+}
+
+console.log(addNums2(5, 7))
