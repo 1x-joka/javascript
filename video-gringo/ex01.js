@@ -109,4 +109,48 @@ while (i < 10) {
     i++
 }
 
-// forEach, map, filter
+// forEach, map, filter --> Iterações com métodos de arrays
+todos.forEach(function(todo) { // A função é executada para cada objeto todo e imprime a propriedade text de cada um
+    console.log(todo.text)
+})
+
+const todoText = todos.map(function(todo) { // Aplica-se map() ao array todos para pegar só os textos (text) de cada tarefa; Ele está criando um novo array (chamado todoText) para retornar os textos de cada elemento do "todos"
+    return todo.text
+})
+console.log(todoText)
+
+const todoCompleted = todos.filter(function(todo) { // Está criando um novo array (chamado todoCompleted) contendo só as tarefas concluídas
+    return todo.isCompleted === true // todo.isCompleted acessa a propriedade que indica se a tarefa foi concluída; === true verifica se essa propriedade é exatamente igual a true (valor booleano verdadeiro)
+})
+console.log(todoCompleted)
+
+const todoCompleted2 = todos.filter(function(todo) {
+    return todo.isCompleted === true
+}).map(function(todo) { // Eu filtro as tarefas concluídas e depois crio um array com elas e retorno-o
+    return todo.text
+})
+console.log(todoCompleted2)
+
+// Estruturas Condicionais
+const alpha = 10
+
+if (alpha === 10) {
+    console.log('alpha is 10')
+} else if (alpha > 10) {
+    console.log('alpha is greater than 10')
+} else {
+    console.log('alpha is less than 10')
+}
+
+const alpha2 = 4
+const beta = 11
+
+if (alpha2 > 5 || beta > 10) {
+    console.log('alpha2 is more than 5 or beta is more than 10')
+}
+
+// Operador Ternário
+const gama = 11
+
+const color = gama > 10 ? 'red' : 'blue' // Se gama for maior que 10, a variável "color" recebe 'red', se não, ela recebe 'blue'
+console.log(color)
