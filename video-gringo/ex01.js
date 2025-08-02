@@ -110,7 +110,7 @@ while (i < 10) {
 }
 
 // forEach, map, filter --> Iterações com métodos de arrays
-todos.forEach(function(todo) { // A função é executada para cada objeto todo e imprime a propriedade text de cada um
+todos.forEach(function(todo) { // A função é executada para cada objeto 'todo' e imprime a propriedade text de cada um
     console.log(todo.text)
 })
 
@@ -170,11 +170,17 @@ switch(color) { // switch vai comparar o valor de 'color' com os case
 function addNums(num1 = 0, num2 = 0) {
     return num1 + num2
 }
-
 console.log(addNums())
 
-const addNums2 = (num3 = 0, num4 = 0) => { // Arrow Function
-    return num3 + num4
+const addNums2 = (num3 = 0, num4 = 0) => { // Arrow Function; O resultado da soma de num3 e num4 será guardada na variável addNums2 (que irá guardar essa função)
+    console.log(num3 + num4)
 }
+addNums2(5, 8) // Estamos chamando a função dentro da variável
 
-console.log(addNums2(5, 7))
+const addNums3 = (num5 = 0, num6 = 0) => num5 + num6
+console.log(addNums3(5, 5))
+
+const addNums4 = num7 => num7 + 5
+console.log(addNums4(5))
+
+todos.forEach((todo) => console.log(todo)) // (todo) => console.log(todo): arrow function que recebe cada 'todo' e imprime no console
