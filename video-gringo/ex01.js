@@ -184,3 +184,54 @@ const addNums4 = num7 => num7 + 5
 console.log(addNums4(5))
 
 todos.forEach((todo) => console.log(todo)) // (todo) => console.log(todo): arrow function que recebe cada 'todo' e imprime no console
+
+// Constructor Function
+
+function Person(firstName, lastName, dob) {
+    this.firstName = firstName // Criando uma variável vazia (que posteriormente será manipulada) / Definindo as propriedades do objeto que será criado
+    this.lastName = lastName
+    this.dob = new Date(dob) // new Date para converter a string 'dob' em um objeto Data no JS
+    this.getBirthYear = function() {
+        return this.dob.getFullYear()
+    }
+    this.getFullName = function() {
+        return `${this.firstName} ${this.lastName}`
+    }
+}
+
+Person.prototype.getBirthYear = function() { // Adicionando o método 'getBirthYear' ao 'prototype' da função para evitar duplicação de métodos para cada situação pedida/criada --> Em vez de cada objeto 'Person' criado carregar suas próprias cópias de métodos, eles compartilham os métodos via prototype
+    return this.dob.getFullYear()
+}
+
+Person.prototype.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`
+}
+
+// Instantiate Object (instanciar um novo objeto com base na função construtora)
+
+const person1 = new Person('John', 'Doe', '4-3-1980') // Cria um novo objeto usando o "molde" da função Person
+console.log(person1)
+
+const person2 = new Person('Mary', 'Smith', '3-6-1970')
+console.log(person2.firstName)
+console.log(person2.dob.getFullYear()) // Pegando apenas o ano de nascimento
+console.log(person1.getBirthYear()) // Pegando apenas o ano de nascimento
+console.log(person1.getFullName()) // Pegando o nome inteiro
+
+// Class (outra forma de fazer a função construtora)
+
+class Person {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.dob = new Date(dob)
+    }
+
+    getBirthYear() {
+        return this.dob.getFullYear()
+    }
+    
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`
+    }
+}
